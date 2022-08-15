@@ -5,6 +5,14 @@ document.getElementById('btn-diposit').addEventListener('click', function () {
     const newDipositAmountString = dipositFild.value;
     const newDipositAmount = parseFloat(newDipositAmountString);
 
+    // step no-7: clear the diposit field
+    dipositFild.value = '';
+
+    if (isNaN(newDipositAmount)) {
+        alert('Please provide a valid Number !');
+        return;
+    }
+
     // step no-3: get the current diposit total amount
     const dipositTotalElement = document.getElementById('diposit-total');
     const previousDipositTotalString = dipositTotalElement.innerText;
@@ -24,6 +32,5 @@ document.getElementById('btn-diposit').addEventListener('click', function () {
     balanceTotalElement.innerText = currentBalanceTotal;
 
 
-    // step no-7: clear the diposit field
-    dipositFild.value = '';
+
 })
